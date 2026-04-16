@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #1e1b4b;
+  --surface: #ffffff;
+  --surface-dark: #1e1b4b;
+  --sidebar: #1e1b4b;
+  --sidebar-accent: rgba(99, 102, 241, 0.1);
+  --accent: #6366f1;
+  --accent-light: #a5b4fc;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.sidebar-glass {
+  background: radial-gradient(circle at 50% 50%, #2a2a72 0%, #1e1b4b 100%);
+}
+
+.floating-input {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.blur-spot {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
